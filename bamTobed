@@ -1,0 +1,13 @@
+samtools view -@ 31 -Shu FILE.bam | samtools sort -@ 31 -n - | bedtools bamtobed -i stdin -bedpe | cut -f 1,2,6 > FILE.bedpe
+
+
+less FILE.bedpe | sortBed | bedtools genomecov -i - -g /data/reddylab/Reference_Data/hg19.genome -d -bg(-z: base resolution) 
+
+
+# BED to wig
+wigToBigWig stdin /data/reddylab/Reference_Data/hg19.genome FILE.bw
+
+
+
+
+
