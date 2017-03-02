@@ -1,0 +1,27 @@
+* When converting bed file with one base to fastq file
+- The bed format:
+ 	chr17   8043828 12
+	chr17   8043829 12
+	chr17   8043830 12
+
+1) To use 'bedtools getfasta', there should be start and end site of genome coordinates. 
+	awk -v OFS='\t' '{print $1, ($2-1), $2}' [FILE.bed]  >  [FILE1.bed]  
+
+2) Convert bed file to fastq file. This command calls a base for $2 position.  
+	bedtools getfasta -tab -fi [FILE2.fa] -bed [FILE1.bed] -fo [FILE3.fa] 
+
+
+- The format of FILE3.fa:
+	chr17:8043827-8043828   A
+	chr17:8043828-8043829   C
+	chr17:8043829-8043830   A
+	chr17:8043830-8043831   C
+	chr17:8043831-8043832   A
+	chr17:8043832-8043833   A
+	chr17:8043833-8043834   A
+
+
+
+
+
+
