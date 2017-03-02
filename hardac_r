@@ -1,0 +1,26 @@
+* Writing a code: 
+  - start with:
+	#!/data/reddylab/software/R-3.1.2/bin/R
+
+  - read a file:
+	input_stream = file("myfile")
+	bac_list = read.delim2(input_stream)
+ 	print(bac_list)
+
+
+* Running R code in HARDAC,
+sbatch -o myOutput --wrap="/data/reddylab/software/R-3.1.2/bin/R CMD BATCH myCode.r"
+
+* Installation of packages:
+  - If a package is in CRAN:
+	install.packages("ggplot2", lib="/data/reddylab/YoungSook/YoungSook_software/R_pkgs/")
+	library(ggplot, lib.loc="/data/reddylab/YoungSook/YoungSook_software/R_pkgs/")
+  - If it is not: ex) when you have to connect to biocLite
+	store it in local library(default setting) -> move all packages to /data/reddylab/YoungSook/YoungSook_software/R_pkgs/ 
+	(command: mv )
+
+* DESeq package
+   - Needed packages in advance:
+	BiocGenerics, Biobase, locfit 
+
+
