@@ -1,0 +1,13 @@
+You have to write this command in git repository. 
+
+1. When adding a file or removing a file
+	- git add mytest.py 
+	- git rm mytest.py
+
+2. Commit
+	- git commit -m "What changes happened?"
+
+3. Push to remote github(online)
+	- git push origin master
+
+
