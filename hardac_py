@@ -1,0 +1,11 @@
+* Writing a code:
+  - starting with:
+	#!/data/reddylab/software/miniconda2/envs/YoungSook/bin/python2.7
+
+
+* Running a code:
+	sbatch -o myOutput --wrap="/data/reddylab/software/miniconda2/envs/YoungSook/bin/python2.7 myFile.py"
+
+* Installing a new package:
+	/data/reddylab/software/miniconda2/envs/YoungSook/bin/pip install --user pacakge_name
+ 
